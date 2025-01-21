@@ -1,0 +1,14 @@
+# Maltego Comms Server
+version: '3'
+services:
+  collabserver:
+    image: registry.paterva.com/collabserver-ubuntu:latest
+    restart: unless-stopped
+    volumes:
+      - comms_db_data:/var/lib/maltego-comms
+    ports:
+     - 9090:9090
+     - 9091:9091
+     - 5222:5222
+volumes:
+  comms_db_data:
